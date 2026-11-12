@@ -8,6 +8,19 @@ Establishes a critical distinction between gate mass and first-record prefix den
 
 ---
 
+## Erratum (2026-11-12)
+
+**Lemma DSC-pre and Theorem 4.1 (FPO) are withdrawn.**
+
+- The claim that all orbits in S_i leave the K_i-cascade at the same residue 3^{L} r_K is false. After a height-K jump the odd core is q' = (3 q_tau + 1) / 2^K, which depends on the bits of q_tau above 2^K. Example: n0 = 139 and n0 = 11 both have first height record 4, and leave the cascade with odd cores 39 and 3 (7 and 3 mod 16); the claimed value is 3 * 5 = 15. Over odd n0 < 200,000 every odd residue mod 2^K occurs after a height-K cascade (K = 4..7).
+- Consequently the prefix density |S_{i+1}| / |S_i| is not a first-passage probability from one fixed starting point, and the "off-target start" explanation of the data does not hold.
+- The numerical table itself was reproduced independently (gate-1 records, odd n0 <= 10^5; largest C = 0.87 at 4 -> 10). Conjecture DSC therefore stands as a numerically supported, unproved conjecture about gate-1 records.
+- If gate-2 jumps are also counted as records, the same bound fails in the data (5 -> 6: ratio 0.592 > 0.5).
+
+The original text presented an exact reduction that is not valid. The PDF in `paper/` is the original, uncorrected version.
+
+---
+
 ## Overview
 
 Gate mass (fraction of gate-1 renewal events at the target residue) and first-record prefix density (fraction of Kᵢ-record orbits achieving Kᵢ₊₁ as their next height record) are conceptually distinct. Numerically, gate mass is approximately 40% while prefix density is approximately 15% — nearly three times smaller. This paper explains the gap exactly.
@@ -26,8 +39,8 @@ The central results are:
 
 | Result | Method | Status |
 |--------|--------|--------|
-| Lemma DSC-pre: exact starting position after cascade | Cascade algebra | ✓ proved |
-| Theorem FPO: prefix density = first-passage probability | Exact reduction | ✓ proved |
+| Lemma DSC-pre: exact starting position after cascade | Cascade algebra | ✗ withdrawn — false, see Erratum |
+| Theorem FPO: prefix density = first-passage probability | Exact reduction | ✗ withdrawn, see Erratum |
 | All measured C < 1 | Numerical | ✓ observed |
 
 ### Conjectural
@@ -43,7 +56,7 @@ The central results are:
 ```
 §1   Introduction: the gate mass trap
 §2   Gate mass vs first-record prefix density
-§3   The starting position after a cascade     ✓ (Lemma DSC-pre)
+§3   The starting position after a cascade     ✗ withdrawn (Lemma DSC-pre)
 §4   Numerical evidence for Conjecture DSC
 §5   Proof strategy for Conjecture DSC         open
 §6   Summary
